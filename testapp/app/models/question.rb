@@ -6,6 +6,6 @@ class Question < ApplicationRecord
     end
     
     def self.test_class_method
-      return "Hello, Worlds! (Controller)"
+      return "Hello, Worlds!"
     end
 end
