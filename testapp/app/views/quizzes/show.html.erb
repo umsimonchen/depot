@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @quiz.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @quiz.date %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @quiz.total %>
+</p>
+
+<% i=1 %>
+<% @quiz.questions.each do |question| %>
+
+  <p>
+  <div style="font: bold 20px arial;">Question <%= i %> </div>
+  <div style="padding-left: 15px ">
+    <div>
+      <strong>Q type:</strong>
+      <%= question.q_type %>
+    </div>
+    <div>
+      <strong>Content:</strong>
+      <%= question.content %>
+    </div>
+    <div>
+      <strong>Sug ans:</strong>
+      <%= question.sug_ans %>
+    </div>
+    <div>
+      <strong>Explain:</strong>
+      <%= question.explain %>
+    </div>
+    <div>
+      <strong>Seq num:</strong>
+      <%= question.seq_num %>
+    </div>
+  </div>
+    <%= link_to 'Edit', edit_question_path(question) %>
+  
+  </p>
+  
+  <% i=i+1 %>
+<% end %>
+
+</br>
+
+
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back', quizzes_path %>

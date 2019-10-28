@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  q_type: MyString
+  content: MyText
+  sug_ans: MyString
+  explain: MyText
+  seq_num: 1
+  quiz_id: 1
+
+two:
+  q_type: MyString
+  content: MyText
+  sug_ans: MyString
+  explain: MyText
+  seq_num: 1
+  quiz_id: 1
