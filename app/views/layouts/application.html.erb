@@ -11,7 +11,7 @@
 
   <body class= "<%= controller.controller_name %> ">
     <div id="banner">
-      <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQemri04vfpF_TBdcbKlT8syIyQqb6943Lw3534RFKPVuOqF03Vkg&s.jpg', 
+      <%= image_tag 'https://m.media-amazon.com/images/S/abs-image-upload-na/0/AmazonStores/ATVPDKIKX0DER/3c8659fb4eb3faafa5a9e8b322da1232.w2648.h942.png', 
         alt: 'The Pragmatic Bookshelf' %>
         
       <span class="title"><%= @page_title %></span>
@@ -19,6 +19,9 @@
     <div id="columns">
       <div id="side">
         <ul>
+          <li><a><%= @time %></a></li>
+          <li><a><%= @date %></a></li>
+          <br>
           <li><a href="httt://www....">Home</a></li>
           <li><a href="httt://www....">Questions</a></li>
           <li><a href="httt://www....">News</a></li>
