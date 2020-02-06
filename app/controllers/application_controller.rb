@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
     before_action :datetime
     
     def datetime
-        @date = Time.now.strftime("%B %e, %Y")
-        @time =Time.now.strftime("%I:%M %p")
+        Time.zone = "Hong Kong"
+        @date = Time.zone.now.strftime("%B %e, %Y")
+        @time =Time.zone.now.strftime("%I:%M %p")
     end
 end

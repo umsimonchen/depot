@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Your Pragmatic Catalog</h1>
-<% if @counter > 5 %>
+<% if @counter and @counter > 5 %>
     <p>Your have visited this page <%= pluralize(@counter, "time") %> without adding.</p>
 <% end %>
 <% cache @products do %>
@@ -13,10 +13,12 @@
                 <p><%= sanitize(product.description) %></p>
                 <div class="price_line">
                     <span class="price"><%= number_to_currency(product.price) %></span>
-                    <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+                    <%= button_to 'Add to Cart', line_items_path(product_id: product),
+                        remote: true %>
                 </div>
             </div>
             <br><br>
         <% end %>    
     <% end %>
 <% end %>
+<button type="button" class="btn btn-danger">Danger</button>

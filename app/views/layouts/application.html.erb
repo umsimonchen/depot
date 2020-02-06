@@ -19,6 +19,14 @@
     <div id="columns">
       <div id="side">
         <ul>
+          <% if @cart %>
+            <div id="cart">
+              <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+                <%= render @cart %>
+              <% end %>
+            </div>
+          <% end %>
+          <br>
           <li><a><%= @time %></a></li>
           <li><a><%= @date %></a></li>
           <br>

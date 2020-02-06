@@ -60,4 +60,9 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   config.web_console.whitelisted_ips = '58.62.123.224'
+  
+  # Use channel for multiple computer development
+  config.action_cable.disable_request_forgery_protection = true
+
+
 end
