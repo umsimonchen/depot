@@ -59,10 +59,18 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
-    @line_item.destroy
+    @current_item = @line_item
+    @line_item.quantity -= 1
     respond_to do |format|
-      format.html { redirect_to store_index_url, notice: 'Item was deleted.' }
-      format.json { head :no_content }
+      if @line_item.quantity > 0 and @line_item.save
+        format.html { redirect_to store_index_url, notice: 'Line item was reduced.' }
+        format.js { @current_item = @line_item }
+        format.json { render :show, status: :ok, location: @line_item }
+      elsif @line_item.quantity == 0 and @line_item.destroy
+        format.html { redirect_to store_index_url, notice: 'Line item was destroyed' }
+      else
+        format.json { head :no_content }
+      end
     end
   end
 

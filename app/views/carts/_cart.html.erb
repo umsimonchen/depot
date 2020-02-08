@@ -8,7 +8,7 @@
     </tr>
 </table>
 <%= button_to 'Empty cart', cart, method: :delete, 
-    data: { confirm: 'Are you sure?' } %>
-
-<li><%= link_to 'Back to main page', store_index_path %></li>
+    data: { confirm: 'Are you sure?' }, remote: true%>
+    
+<br>
 <% end %>
